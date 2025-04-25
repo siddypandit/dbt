@@ -18,7 +18,7 @@ models:
           - unique
           - not_null
       - name: status
-        description: "{{doc('order_status')}}"    #doc block taken from .md file
+        description: "{{doc('order_status')}}" #doc block taken from .md file
         tests:
           - accepted_values:
               values:
@@ -29,6 +29,6 @@ models:
                 - placed
       - name: customer_id
         tests:
-          - relationships:  #orderid should match to customerid in customer table
+          - relationships: #orderid should match to customerid in customer table
               to: ref('stg_jaffle_shop__customers')
               field: customer_id

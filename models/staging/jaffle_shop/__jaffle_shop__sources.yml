@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: a clone of a Postgres application database
     database: raw    
     schema: jaffle_shop
     freshness:  #check freshness of source. will give error if data is older than 2 days. Here applied at schema level
@@ -13,6 +14,11 @@ sources:
             period: hour
     loaded_at_field: _etl_loaded_at
     tables:
-      - name: orders  
+      - name: orders
+        description: raw order data
       - name: customers
-        freshness: null     #null because this table does not have _etl_loaded_at column so it will give error   
+        description: raw customer data
+        columns:
+          - name: id  #original source column
+            description: primary key for customer data
+        freshness: null     #null because this table does not have _etl_loaded_at column so it will give error
