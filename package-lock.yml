@@ -1,0 +1,8 @@
+packages:
+  - name: audit_helper
+    package: dbt-labs/audit_helper
+    version: 0.3.0
+  - name: dbt_utils
+    package: fishtown-analytics/dbt_utils
+    version: 0.6.6
+sha1_hash: a32cb6d75f1ae61dc97133089b54e2406eed57da
